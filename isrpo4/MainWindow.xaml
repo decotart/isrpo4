@@ -1,0 +1,64 @@
+﻿<Window x:Class="isrpo4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:isrpo4"
+        mc:Ignorable="d"
+        Title="Практическая работа №4"
+        Loaded="Window_Loaded"
+        Height="450"
+        Width="800"
+        MaxHeight="1080"
+        MaxWidth="1920"
+        MinHeight="540"
+        MinWidth="960">
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Canvas x:Name="mainCanvas">
+            
+        </Canvas>
+
+        <Grid Grid.Column="1"
+              x:Name="mainGrid">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button Background="White"
+                    Content="Выбрать элемент"
+                    FontSize="30"
+                    Grid.Row="0"
+                    Click="btnPickElement_Click"/>
+
+            <Button Background="White"
+                    Content="Выбрать количество шагов"
+                    FontSize="25"
+                    Grid.Row="1"
+                    Click="btnPickSize_Click"/>
+
+            <Button Background="White"
+                    Content="Выбрать Цвет"
+                    FontSize="30"
+                    Grid.Row="2"
+                    Click="btnPickColor_Click"/>
+
+            <Button Background="White"
+                    Content="Выйти"
+                    FontSize="30"
+                    Grid.Row="3"
+                    Click="btnExit_Click"/>
+
+        </Grid>
+        
+    </Grid>
+</Window>
