@@ -47,7 +47,7 @@
                     Click="btnPickSize_Click"/>
 
             <Button Background="White"
-                    Content="Выбрать Цвет"
+                    Content="Выбрать цвет"
                     FontSize="30"
                     Grid.Row="2"
                     Click="btnPickColor_Click"/>

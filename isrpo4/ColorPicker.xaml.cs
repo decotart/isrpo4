@@ -26,7 +26,18 @@ namespace isrpo4
 
         private void btnColor_Click(object sender, RoutedEventArgs e)
         {
+            GlobalData.isGradient = false;
+
             GlobalData.ElementColor = ((Button)sender).Background;
+
+            GlobalData.isSuccessful = true;
+
+            Close();
+        }
+
+        private void btnGradient_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalData.isGradient = true;
 
             GlobalData.isSuccessful = true;
 

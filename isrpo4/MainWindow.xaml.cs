@@ -19,6 +19,8 @@ namespace isrpo4
         public MainWindow()
         {
             InitializeComponent();
+
+            GlobalData.ElementColor = Brushes.Black;
         }
 
         private void btnPickElement_Click(object sender, RoutedEventArgs e)
@@ -131,6 +133,8 @@ namespace isrpo4
                 end.Y + direction.X * Math.Sin(angle) + direction.Y * Math.Cos(angle));
 
             DrawBranch(end, rightEnd, steps - 1);
+
+            GlobalData.GradientId++;
         }
 
         private void DrawKochCurve()
@@ -171,6 +175,8 @@ namespace isrpo4
                 DrawKochSegment(p2, peak, steps - 1);
                 DrawKochSegment(peak, p3, steps - 1);
                 DrawKochSegment(p3, p1, steps - 1);
+
+                GlobalData.GradientId++;
             }
         }
 
@@ -196,6 +202,8 @@ namespace isrpo4
                 Canvas.SetLeft(rectangle, topLeft.X);
                 Canvas.SetTop(rectangle, topLeft.Y);
                 mainCanvas.Children.Add(rectangle);
+
+                GlobalData.GradientId++;
             }
             else
             {
@@ -211,6 +219,8 @@ namespace isrpo4
                 DrawCarpet(new Point(topLeft.X, topLeft.Y + 2 * newSize), newSize, steps - 1); 
                 DrawCarpet(new Point(topLeft.X + newSize, topLeft.Y + 2 * newSize), newSize, steps - 1);
                 DrawCarpet(new Point(topLeft.X + 2 * newSize, topLeft.Y + 2 * newSize), newSize, steps - 1);
+
+                GlobalData.GradientId++;
             }
         }
 
@@ -233,6 +243,8 @@ namespace isrpo4
                     Fill = GlobalData.ElementColor
                 };
                 mainCanvas.Children.Add(triangle);
+
+                GlobalData.GradientId++;
             }
             else
             {
@@ -243,6 +255,8 @@ namespace isrpo4
                 DrawTriangle(steps - 1, top, midLeft, midRight);
                 DrawTriangle(steps - 1, left, midLeft, midBottom);
                 DrawTriangle(steps - 1, right, midRight, midBottom);
+
+                GlobalData.GradientId++;
             }
         }
 
@@ -279,7 +293,9 @@ namespace isrpo4
             double newLength = length / 3;
 
             DrawCantorSegment(startX, startY + 20, newLength, steps - 1);
-            DrawCantorSegment(startX + 2 * newLength, startY + 20, newLength, steps - 1); 
+            DrawCantorSegment(startX + 2 * newLength, startY + 20, newLength, steps - 1);
+
+            GlobalData.GradientId++;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) => DrawElement();
